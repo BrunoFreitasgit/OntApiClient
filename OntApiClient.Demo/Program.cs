@@ -37,6 +37,9 @@ namespace OntApiClient.Demo
             var getRawTransactionVerboseDto =
                 await service.Transactions.GetRawTransactionVerbose.SendRequestAsync(
                     "594d82eb2b5b688d4bb031552d92c6bf195a5754755cfbada3b7df746f5e6085");
+            var getSmartCodeEventByBlock = await service.Contracts.GetSmartCodeEventByBlock.SendRequestAsync(0);
+            var getSmartCodeEventByTx =
+                await service.Contracts.GetSmartCodeEventByTx.SendRequestAsync(getSmartCodeEventByBlock[0]);
         }
     }
 }

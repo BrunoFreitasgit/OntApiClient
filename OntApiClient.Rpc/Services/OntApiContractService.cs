@@ -8,8 +8,12 @@ namespace OntApiClient.Rpc.Services
         public OntApiContractService(IClient client) : base(client)
         {
             GetStorage = new OntGetStorage(client);
+            GetSmartCodeEventByBlock = new OntGetSmartCodeEventByBlock(client);
+            GetSmartCodeEventByTx = new OntGetSmartCodeEventByTx(client);
         }
 
         public OntGetStorage GetStorage { get; }
+        public OntGetSmartCodeEventByBlock GetSmartCodeEventByBlock { get; }
+        public OntGetSmartCodeEventByTx GetSmartCodeEventByTx { get; }
     }
 }
